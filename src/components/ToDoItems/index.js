@@ -1,13 +1,19 @@
 import React, { Component } from "react";
 import "./ToDoItems.scss";
-import propTypes from "prop-types";
+import PropTypes from "prop-types";
 
 class ToDoItems extends Component {
-  static propTypes = {
-    items: propTypes.array
+  static PropTypes = {
+    items: PropTypes.array,
+    removeItem: PropTypes.func
   };
+
   renderItem = item => {
-    return <li key={item.key}>{item.text}</li>;
+    return (
+      <li key={item.key} onClick={() => this.props.removeItem(item.key)}>
+        {item.text}
+      </li>
+    );
   };
 
   render() {
