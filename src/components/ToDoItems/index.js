@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import "./ToDoItems.scss";
-import PropTypes from "prop-types";
+import propTypes from "prop-types";
 
 class ToDoItems extends Component {
-  static PropTypes = {
-    items: PropTypes.array
+  static propTypes = {
+    items: propTypes.array
   };
   renderItem = item => {
     return <li key={item.key}>{item.text}</li>;
